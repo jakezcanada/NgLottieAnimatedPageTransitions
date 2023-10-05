@@ -1,0 +1,40 @@
+h1 {
+  font-size: 3.5vw;
+  padding: 2vh;
+}
+
+h2 {
+  font-size: 1.5vw;
+  padding: 2vh;
+}
+
+.title {
+  text-align: left;
+}
+
+img {
+  transition: transform .2s;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  width: 15vw;
+  height: 15vw;
+  margin: auto;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transition: transform .2s;
+  overflow: hidden;
+}
+
+.profile-picture {
+  transition: transform .2s;
+}
+
+.profile-picture:hover {
+  width: 25vw;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  transform: scale(1.1);
+}
