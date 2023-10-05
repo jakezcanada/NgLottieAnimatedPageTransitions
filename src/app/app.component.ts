@@ -12,7 +12,7 @@ import { AnimationOptions } from 'ngx-lottie';
 export class AppComponent implements AfterViewInit{
   constructor(private _router: Router) { }
   ngAfterViewInit() {
-    this.openDoors();
+    setTimeout(()=>{this.openDoors();}, 1000);
   }
   currentNav: string = this._router.url.replace("/","");
   showClosing: boolean = false;
