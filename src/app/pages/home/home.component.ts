@@ -8,20 +8,15 @@ import Typewriter from 't-writer.js';
 })
 export class HomeComponent implements OnInit{
   constructor() { }
+  pfpIsHovered: boolean = false;
   ngOnInit(): void {
-    const target = document.querySelector('.tw')
-
-    const options = {
-      loop: true
-    }
-
+    const target = document.querySelector('.tw');
     const writer = new Typewriter(target, {
       loop: true,
       typeSpeed: 100,
       deleteSpeed: 20,
       typeColor: 'red'
     })
-
     writer
       .type('Web Development')
       .rest(500)
@@ -35,6 +30,6 @@ export class HomeComponent implements OnInit{
       .type('Backend Development')
       .rest(500)
       .clear()
-      .start()
+      .start();
   }
 }

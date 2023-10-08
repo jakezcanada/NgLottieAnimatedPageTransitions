@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  margin: 0;
+  overflow: hidden;
+}
+@media (max-aspect-ratio: 3/2) {
+  div {
+    background: orange;
+  }
+}
+@media (min-aspect-ratio: 2/1) {
+
+}

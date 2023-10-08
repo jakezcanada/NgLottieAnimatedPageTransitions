@@ -14,7 +14,7 @@ export class AppComponent implements AfterViewInit{
   ngAfterViewInit() {
     setTimeout(()=>{this.openDoors();}, 1000);
   }
-  currentNav: string = this._router.url.replace("/","");
+  currentNav: string = "";
   showClosing: boolean = false;
   showOpening: boolean = true;
   isTransitioning: boolean = true;
@@ -31,8 +31,8 @@ export class AppComponent implements AfterViewInit{
   optionsLamp: AnimationOptions = {
     path: '/assets/Lamp.json'
   }
-  title = 'ProfileWebsite';
   navigateTo(link: string){
+    this.currentNav = this._router.url.replace("/","");
     if (link !== this.currentNav && !this.isTransitioning){
       this.closeDoors()
       this.currentNav = link

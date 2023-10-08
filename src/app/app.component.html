@@ -1,31 +1,29 @@
-<div class="centered-axis-x">
-  <ng-lottie
-    class="lamp"
-    [options]="optionsLamp"
-  ></ng-lottie>
+<div class="background"></div>
+<div style="position: absolute; margin: 18vh 28vw 18vh 28vw; height: 66vh; width: 44vw; z-index: -1">
+  <router-outlet></router-outlet>
 </div>
-<div class="centered-axis-x">
-  <ng-container *ngIf="showOpening">
-    <ng-lottie
-      class="door"
-      [options]="optionsOpen"
-      (animationCreated)="showClosing = false"
-      (complete)="showOpening = isTransitioning = false"
-    ></ng-lottie>
-  </ng-container>
-  <ng-container *ngIf="showClosing">
-    <ng-lottie
-      class="door"
-      [options]="optionsClose"
-      (animationCreated)="showClosing = isTransitioning = true"
-      (complete)="doNav()"
-    ></ng-lottie>
-  </ng-container>
-</div>
+<ng-container *ngIf="showOpening || showClosing">
+  <div class="centered-axis-x">
+    <ng-container *ngIf="showOpening">
+      <ng-lottie
+        class="door"
+        [options]="optionsOpen"
+        (animationCreated)="showClosing = false"
+        (complete)="showOpening = isTransitioning = false"
+      ></ng-lottie>
+    </ng-container>
+    <ng-container *ngIf="showClosing">
+      <ng-lottie
+        class="door"
+        [options]="optionsClose"
+        (animationCreated)="showClosing = isTransitioning = true"
+        (complete)="doNav()"
+      ></ng-lottie>
+    </ng-container>
+  </div>
+</ng-container>
 <div class="centered-axis-x" style="z-index: 2">
   <button type="button" class="btn" (click)="navigateTo('home')">Home</button>
   <button type="button" class="btn" (click)="navigateTo('about')">About</button>
 </div>
-<div style="margin: 18vh 28vw 18vh 26vw">
-  <router-outlet></router-outlet>
-</div>
+

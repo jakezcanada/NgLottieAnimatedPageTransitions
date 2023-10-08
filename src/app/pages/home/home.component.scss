@@ -31,10 +31,3 @@ img {
 .profile-picture {
   transition: transform .2s;
 }
-
-.profile-picture:hover {
-  width: 25vw;
-  border-radius: 50%;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
-  transform: scale(1.1);
-}
