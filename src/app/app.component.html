@@ -3,22 +3,22 @@
   <router-outlet></router-outlet>
 </div>
 <ng-container *ngIf="showOpening">
-  <div class="centered-axis-x" style="background: blue">
+  <div class="centered-axis-x">
     <ng-lottie
       class="door"
       [options]="optionsOpen"
-      (animationstart)="showClosing = false"
+      (animationCreated)="showClosing = false"
       (complete)="showOpening = isTransitioning = false"
     ></ng-lottie>
   </div>
 </ng-container>
 <ng-container *ngIf="showClosing">
-  <div class="centered-axis-x" style="background: red">
+  <div class="centered-axis-x">
     <ng-lottie
       class="door"
       [options]="optionsClose"
-      (animationCreated)="showClosing = isTransitioning = true"
-      (animationend)="doNav()"
+      (animationCreated)="isTransitioning = true"
+      (complete)="doNav()"
     ></ng-lottie>
   </div>
 </ng-container>

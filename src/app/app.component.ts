@@ -44,13 +44,17 @@ export class AppComponent implements AfterViewInit{
     };
   }
   openDoors(): void {
+    this.showOpening = true;
     this.optionsOpen = {
       ...this.optionsOpen, // In case you have other properties that you want to copy
       autoplay: true
     };
   }
   doNav(){
-    this._router.navigate([this.currentNav]);
+    this._router.navigate([this.currentNav]).then(() => {
+
+    });
+    this.openDoors();
   }
 
   protected readonly console = console;
