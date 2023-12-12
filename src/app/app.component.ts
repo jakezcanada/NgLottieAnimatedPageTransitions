@@ -28,9 +28,6 @@ export class AppComponent implements AfterViewInit{
     loop: false,
     autoplay: false
   };
-  optionsLamp: AnimationOptions = {
-    path: '/assets/Lamp.json'
-  }
   navigateTo(link: string){
     this.currentNav = this._router.url.replace("/","");
     if (link !== this.currentNav && !this.isTransitioning){
@@ -47,15 +44,14 @@ export class AppComponent implements AfterViewInit{
     };
   }
   openDoors(): void {
-    this.showOpening = true;
     this.optionsOpen = {
       ...this.optionsOpen, // In case you have other properties that you want to copy
       autoplay: true
     };
   }
   doNav(){
-    console.log('SHIT')
     this._router.navigate([this.currentNav]);
-    this.openDoors();
   }
+
+  protected readonly console = console;
 }

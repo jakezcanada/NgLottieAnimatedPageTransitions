@@ -1,7 +1,16 @@
 .centered-axis-x {
   position: absolute;
   top: 0;
-  margin: auto
+  height: 100%;
+  width: 200vw;
+
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.centered-axis-x-buttons {
+  position: absolute;
+  top: 0;
+  margin: auto;
 }
 .door {
   height: 100%;
