@@ -7,6 +7,11 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { LottieModule, LottieCacheModule } from 'ngx-lottie';
 import {CommonModule} from "@angular/common";
+import { ContactComponent } from './pages/contact/contact.component';
+import { ProjectsComponent } from './pages/projects/projects.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppMaterialModule } from './app-material.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 export function playerFactory() {
   return import(/* webpackChunkName: 'lottie-web' */ 'lottie-web');
 }
@@ -14,14 +19,19 @@ export function playerFactory() {
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    ContactComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     LottieModule.forRoot({ player: playerFactory }),
-    LottieCacheModule.forRoot()
+    LottieCacheModule.forRoot(),
+    BrowserAnimationsModule,
+    AppMaterialModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

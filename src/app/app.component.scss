@@ -3,18 +3,12 @@
   top: 0;
   height: 100%;
   width: 200vw;
-
   margin-left: 50%;
   transform: translateX(-50%);
-}
-.centered-axis-x-buttons {
-  position: absolute;
-  top: 0;
-  margin: auto;
+  z-index: 100;
 }
 .door {
   height: 100%;
-  z-index: 100;
 }
 .background {
   height: 100%;
@@ -27,4 +21,40 @@
   background-size: cover;
   position: absolute;
   z-index: -100;
+}
+.centered-axis-x-buttons {
+  display: flex;
+  justify-content: space-around;
+  top: 0;
+  margin: auto;
+  z-index: 10;
+}
+.btn {
+  color: #a16145;
+  font-size: 2vh;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 0.5vh;
+  padding: 1vh;
+  border: 2px solid #a16145;
+  border-radius: 0.5rem;
+  position: relative;
+  top: 0;
+  transition: all 100ms ease-in-out;
+  box-shadow: 0 0.6em #a16145, 0 0.9em rgba(0, 0, 0, 0.4);
+}
+.btn:hover {
+  background: #a16145;
+  color: #000000;
+}
+.btn:focus {
+  top: 0.6em;
+  box-shadow: 0 0.2em rgba(0, 0, 0, 0.4);
+}
+.active-btn {
+  background: #a16145;
+  color: #000000;
+  top: 0.6em;
+  box-shadow: 0 0.2em rgba(0, 0, 0, 0.4);
 }

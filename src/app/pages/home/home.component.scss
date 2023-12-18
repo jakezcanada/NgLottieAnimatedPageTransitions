@@ -10,6 +10,8 @@ h2 {
 
 .title {
   text-align: left;
+  position: relative;
+  z-index: -2;
 }
 
 img {

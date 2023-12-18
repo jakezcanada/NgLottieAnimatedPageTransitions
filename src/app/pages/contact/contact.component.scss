@@ -3,7 +3,7 @@ h1 {
   padding: 2vh;
 }
 
-p {
+h2 {
   font-size: 1.5vw;
   padding: 2vh;
 }
@@ -11,4 +11,8 @@ p {
   text-align: left;
   position: relative;
   z-index: -2;
+}
+.socials-container {
+  display: flex;
+  justify-content: space-around;
 }

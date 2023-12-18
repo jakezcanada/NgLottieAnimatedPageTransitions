@@ -10,14 +10,11 @@ import { AnimationOptions } from 'ngx-lottie';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit{
-  constructor(private _router: Router) { }
-  ngAfterViewInit() {
-    setTimeout(()=>{this.openDoors();}, 1000);
-  }
-  currentNav: string = "";
   showClosing: boolean = false;
   showOpening: boolean = true;
   isTransitioning: boolean = true;
+  currentNav: string = "";
+  links: string[] = ['home', 'about', 'projects', 'contact'];
   optionsOpen: AnimationOptions = {
     path: '/assets/Doors Open.json',
     loop: false,
@@ -28,6 +25,14 @@ export class AppComponent implements AfterViewInit{
     loop: false,
     autoplay: false
   };
+  constructor(private _router: Router) { }
+  ngAfterViewInit() {
+    setTimeout(()=> {
+      this.openDoors();
+      this.currentNav = this._router.url.replace("/","");
+      console.log(this.currentNav);
+      }, 500);
+  }
   navigateTo(link: string){
     this.currentNav = this._router.url.replace("/","");
     if (link !== this.currentNav && !this.isTransitioning){
@@ -58,4 +63,5 @@ export class AppComponent implements AfterViewInit{
   }
 
   protected readonly console = console;
+  protected readonly alert = alert;
 }
